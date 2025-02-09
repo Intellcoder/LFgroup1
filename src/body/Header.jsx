@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import MenuBar from "./components/MenuBar";
 import Logo from "../assets/Logo.jpg";
 import { BiMenu } from "react-icons/bi";
@@ -17,34 +17,34 @@ const Header = () => {
     setIsvisible(false);
   }, [location.pathname]);
   return (
-    <header className=" flex gap-4 items-center justify-between  h-[10vh] bg-[#fff7ea] px-6   rounded-[20px] border border-gray-300  md:p-2">
+    <header className=" flex gap-4 items-center justify-between  h-[10vh] bg-[#fff7ea] px-6   rounded-[20px] border border-gray-300  md:p-2 m-2">
       <img src={Logo} alt="" className="  md: h-10 " />
 
       <nav className="sm: hidden md:flex gap-5 place-content-center ">
-        <a
-          href="/"
+        <Link
+          to="/"
           className=" text-[17px] font-medium hover:bg-[#fd3c1d] p-2 rounded-lg"
         >
           Home
-        </a>
-        <a
-          href="/about"
+        </Link>
+        <Link
+          to="/about"
           className="text-[17px] font-medium hover:bg-[#fd3c1d] p-2 rounded-lg md"
         >
           About
-        </a>
-        <a
-          href="/courses"
+        </Link>
+        <Link
+          to="/courses"
           className="text-[17px] font-medium hover:bg-[#fd3c1d] p-2 rounded-lg"
         >
           All Courses
-        </a>
-        <a
-          href="/application"
+        </Link>
+        <Link
+          to="/application"
           className=" text-[17px] font-medium hover:bg-[#fd3c1d] p-2 rounded-lg"
         >
           Get Started
-        </a>
+        </Link>
       </nav>
 
       <button
