@@ -42,17 +42,6 @@ const Body = () => {
             <button className="border text-2xl border-[#fd3c1d] bg-white ml-5 mr-2 mt-4 p-1 rounded-xl">
               All Courses
             </button>
-            {/* <div className="mt-4 flex gap-3 justify-center space-between">
-              <button className=" hover:bg-white bg-[#fd3c1d] border border-white text-white px-4 py-2 rounded-lg">
-                Get started
-              </button>
-              <button className="hover:bg-[#fd3c1d] border border-[#fd3c1d] bg-white text-[black] px-4 py-2 rounded-lg">
-                All courses
-              </button>
-            </div>
-            <div className="w-1/2">
-              <img src={aa} alt="" />
-            </div> */}
           </div>
         </div>
         <div className=" w-full h-full flex justify-center items-center p-2 rounded-md md: w-[50%] ">

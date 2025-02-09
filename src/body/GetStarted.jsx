@@ -16,21 +16,13 @@ const GetStarted = () => {
         "https://learnfactory-applicant-portal.onrender.com",
         data
       );
-      console.log(response.data);
-      reset();
+
       if (isSubmitted) {
         navigate("/succesful");
       }
-    } catch (error) {
-      console.log(error);
-    }
+      reset();
+    } catch (error) {}
   };
-
-  // useEffect(() => {
-  //   if (isSubmitted) {
-  //     navigate("/succesful");
-  //   }
-  // });
 
   return (
     <div>
@@ -128,10 +120,10 @@ const GetStarted = () => {
             <label className="text-[20px] font-medium">Date of Birth</label>
             <input
               type="text"
+              id="date_of_birth"
               {...register("date_of_birth", {
                 required: "Please provide birthday",
               })}
-              name="birthday"
               placeholder="date of birth"
               className="bg-gray-300 outline-none p-2 w-[100%] rounded "
             />

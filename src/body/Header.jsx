@@ -11,8 +11,6 @@ const Header = () => {
   const location = useLocation();
   const toggle = ({ prev }) => {
     setIsvisible((prev) => !prev);
-
-    console.log("clicked");
   };
 
   useEffect(() => {
