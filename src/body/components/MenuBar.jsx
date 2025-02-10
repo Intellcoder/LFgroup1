@@ -5,7 +5,7 @@ const MenuBar = ({ isvisible }) => {
     <div
       data-isvisible={!isvisible}
       className={`md:hidden flex flex-col  text-white text-[18px] justify-between bg-[#fd3c1d] w-[40%] 
-        right-[1.2rem] h-[37%] top-[14vh] absolute rounded-b-xl rounded-br-xl rounded-lg ${
+        right-[1.2rem] h-[45%] top-[14vh] absolute rounded-b-xl rounded-br-xl rounded-lg ${
           isvisible ? "block" : "hidden"
         } transition-all-300`}
     >

@@ -1,5 +1,7 @@
 import React from "react";
 import c from "../assets/c.jpg";
+import { useNavigate } from "react-router-dom";
+import { MdLocationPin } from "react-icons/md";
 import js from "../assets/js.jpg";
 import py from "../assets/py.jpg";
 import ui from "../assets/ui.jpg";
@@ -13,8 +15,10 @@ import structure from "../assets/structure.png";
 import Logo from "../assets/Logo.jpg";
 
 const Body = () => {
+  const navigate = useNavigate();
+
   return (
-    <main>
+    <main className="m-2">
       <section className="md:flex mt-10 mb-10 p-2 ">
         <div className="bg-white min-w-[50%]">
           <h1 className="font-black text-[40px]">
@@ -36,10 +40,18 @@ const Body = () => {
               height: "40vh",
             }}
           >
-            <button className=" border text-white text-2xl border-white bg-[#fd3c1d] rounded-xl ml-4 p-1">
+            <button
+              onClick={() => {
+                navigate("/application");
+              }}
+              className=" border text-white text-2xl border-white bg-[#fd3c1d] rounded-xl ml-4 p-1"
+            >
               Get started
             </button>
-            <button className="border text-2xl border-[#fd3c1d] bg-white ml-5 mr-2 mt-4 p-1 rounded-xl">
+            <button
+              onClick={() => navigate("/courses")}
+              className="border text-2xl border-[#fd3c1d] bg-white ml-5 mr-2 mt-4 p-1 rounded-xl"
+            >
               All Courses
             </button>
           </div>
@@ -78,7 +90,10 @@ const Body = () => {
             Factory-Tech Hub.
           </p>
 
-          <button className="rounded-lg border border-gray-500 px-3 py-2 mt-4">
+          <button
+            onClick={() => navigate("/about")}
+            className="rounded-lg border border-gray-500 px-3 py-2 mt-4"
+          >
             Learn More
           </button>
         </div>
@@ -95,7 +110,7 @@ const Body = () => {
         </p>
         <div className=" sm:text-[14px]  grid grid-cols-4 -2  gap-4 p-4  ">
           <div
-            className="rounded-3xl h-fit  flex items-center justify-center text-white font-bold "
+            className="rounded-3xl h-fit  flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${js})`,
               backgroundSize: "cover",
@@ -108,7 +123,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${py})`,
               backgroundSize: "cover",
@@ -121,7 +136,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${ui})`,
               backgroundSize: "cover",
@@ -134,7 +149,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${ani})`,
               backgroundSize: "cover",
@@ -147,7 +162,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${fs})`,
               backgroundSize: "cover",
@@ -160,7 +175,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${de})`,
               backgroundSize: "cover",
@@ -173,7 +188,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${cys})`,
               backgroundSize: "cover",
@@ -186,7 +201,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold"
+            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
             style={{
               backgroundImage: `url(${ai})`,
               backgroundSize: "cover",
@@ -216,65 +231,85 @@ const Body = () => {
           </p>
           <img src={aa} alt="" className="bg-none rounded-[30px] mt-4" />
         </div>
-        <div className=" bg-[purple] p-2 md:ml-2">
+        <div className=" bg-[purple] p-2 ">
           <span className="mt-4 mb-6">
-            <img src="" alt="" />
-            <span>
-              <p className="text-white mb-6 text-[19px]">Learn anywhere</p>
-              <p className="text-white">
-                We are explored to deliver.Our research made us resolved to an
-                online and onsite lecture arrangements as the best
-                modality,wrapped up with projects and internship.
-              </p>
+            <span className="flex justify-center items-center">
+              <span className=" bg-white flex justify-center p-2 rounded-[20px] m-2">
+                <MdLocationPin size={"24px"} />
+              </span>
+              <span className="m-2">
+                <p className="text-white mb-2 mt-2 text-[19px]">
+                  Learn anywhere
+                </p>
+                <p className="text-white">
+                  We are explored to deliver.Our research made us resolved to an
+                  online and onsite lecture arrangements as the best
+                  modality,wrapped up with projects and internship.
+                </p>
+              </span>
             </span>
-            <span className="mt-8 flex p-2">
-              <img src="" alt="" className="" />
-              <span className="mt-4">
-                <p className="text-white mb-6 text-[19px]">Learning is fun</p>
+            <span className="flex justify-center items-center">
+              <span className=" bg-white flex justify-center p-2 rounded-[20px] m-2">
+                <MdLocationPin size={"24px"} />
+              </span>
+              <span className="m-2">
+                {" "}
+                <p className="text-white mb-2 mt-2 text-[19px]">
+                  Learning is fun
+                </p>
                 <p className="text-white">
                   Say goodbye to outdated curriculums, bulky lecture notes, and
                   boring lectures
                 </p>
               </span>
             </span>
-            <span className="text-white mt-8 flex p-2">
-              <img src="" alt="" />
-              <span className="mt-4 mb-6">
-                <p className="text-white mb-6 text-[19px]">
+            <span className="flex justify-center items-center">
+              <span className=" bg-white flex justify-center p-2 rounded-[20px] m-2">
+                <MdLocationPin size={"24px"} />
+              </span>
+              <span className="m-2">
+                {" "}
+                <p className="text-white mb-2 mt-2 text-[19px]">
                   Learning is Communal
                 </p>
-                <p>
+                <p className="text-white">
                   Learners are working together, sharing knowledge, and
                   collaborating to enhance their understanding. You are not
                   alone with your learning journey.
                 </p>
               </span>
             </span>
-            <span className="text-white mt-8 flex p-2">
-              <img src="" alt="" />
-              <span className="mt-4 mb-6">
-                <p className="text-white mb-6 text-[19px]">
+            <span className="flex justify-center items-center">
+              <span className=" bg-white flex justify-center p-2 rounded-[20px] m-2">
+                <MdLocationPin size={"24px"} />
+              </span>
+              <span className="m-2">
+                {" "}
+                <p className="text-white mb-2 mt-2 text-[19px]">
                   Learning from the best
                 </p>
-                <p>
+                <p className="text-white">
                   Our instructors are carefully selected to give you the best
                   learning outcome.They are the best on the subject matter and
                   poised to give you the learning you deserve.
                 </p>
               </span>
             </span>
-            <span className="text-white mt-8 flex p-2">
-              <img src="" alt="" />
-              <span className="mt-4 mb-6">
-                <p className="text-white mb-6 text-[19px]">
-                  Learn the profitable
-                </p>
-                <p>
-                  Whether you're exploring a career path, embracing a new
-                  challenge or acquiring new skills for career, we will help you
-                  to achieve the desired results.
-                </p>
-              </span>
+          </span>
+          <span className="flex justify-center items-center">
+            <span className=" bg-white flex justify-center p-2 rounded-[20px] m-2">
+              <MdLocationPin size={"24px"} />
+            </span>
+            <span className="m-2">
+              {" "}
+              <p className="text-white mb-2 mt-2 text-[19px]">
+                Learn the profitable
+              </p>
+              <p className="text-white">
+                Whether you're exploring a career path, embracing a new
+                challenge or acquiring new skills for career, we will help you
+                to achieve the desired results.
+              </p>
             </span>
           </span>
         </div>

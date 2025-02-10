@@ -6,7 +6,7 @@ import axios from "axios";
 const GetStarted = () => {
   const form = useForm();
   const { register, handleSubmit, reset, formState } = form;
-  const { errors, isSubmitted } = formState;
+  const { errors, isSubmitted, isSubmitting } = formState;
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const GetStarted = () => {
   };
 
   return (
-    <div>
+    <div className="m-2">
       <section className="flex flex-col justify-center items-center p-10 mt-10">
         <h1 className="text-center font-bold text-[30px] text-purple-600">
           Welcome!
@@ -259,6 +259,7 @@ const GetStarted = () => {
                   <input
                     type="checkbox"
                     value="morning"
+                    name="preference"
                     {...register("preference")}
                     id="morning"
                   />
@@ -270,6 +271,7 @@ const GetStarted = () => {
                   <input
                     type="checkbox"
                     value="afternoon"
+                    name="preference"
                     {...register("preference")}
                     id="afternoon"
                   />
@@ -279,11 +281,16 @@ const GetStarted = () => {
             </div>
           </section>
           <button
+            disabled={isSubmitting}
             onClick={onSubmit}
             type="submit"
             className="bg-[#fd3c1d] self-center text-white text-lg px-20 py-2 rounded-lg m-4"
           >
-            Submit
+            {isSubmitting ? (
+              <span className="text-[18px]">Submitting...</span>
+            ) : (
+              "Submit"
+            )}
           </button>
         </form>
       </section>
