@@ -110,7 +110,7 @@ const Body = () => {
         </p>
         <div className=" sm:text-[14px]  grid grid-cols-4 -2  gap-4 p-4  ">
           <div
-            className="rounded-3xl h-fit  flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit  flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${js})`,
               backgroundSize: "cover",
@@ -123,7 +123,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${py})`,
               backgroundSize: "cover",
@@ -136,7 +136,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${ui})`,
               backgroundSize: "cover",
@@ -149,7 +149,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${ani})`,
               backgroundSize: "cover",
@@ -162,7 +162,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[11px] text-wrap"
             style={{
               backgroundImage: `url(${fs})`,
               backgroundSize: "cover",
@@ -175,7 +175,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl text-[10.5px] rounded-3xl h-fit flex items-center justify-center text-white font-bold  text-wrap"
             style={{
               backgroundImage: `url(${de})`,
               backgroundSize: "cover",
@@ -188,7 +188,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${cys})`,
               backgroundSize: "cover",
@@ -201,7 +201,7 @@ const Body = () => {
           </div>
 
           <div
-            className="rounded-3xl h-fit flex items-center justify-center text-white font-bold text-wrap"
+            className="md:text-2xl rounded-3xl h-fit flex items-center justify-center text-white font-bold text-[12px] text-wrap"
             style={{
               backgroundImage: `url(${ai})`,
               backgroundSize: "cover",

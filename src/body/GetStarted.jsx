@@ -1,11 +1,28 @@
 import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const GetStarted = () => {
-  const form = useForm();
-  const { register, handleSubmit, reset, formState } = form;
+  const { register, handleSubmit, reset, formState, control, setValue, watch } =
+    useForm({
+      defaultValues: {
+        name: "",
+        selectedOption: "",
+        preference: "",
+      },
+    });
+
+  const selectedOption = watch("selectedOption");
+  const preference = watch("preference");
+
+  const handleCheckBoxChange = (value) => {
+    setValue("selectedOption", value);
+  };
+
+  const handlePreferenceChange = (value) => {
+    setValue("preference", value);
+  };
   const { errors, isSubmitted, isSubmitting } = formState;
 
   const navigate = useNavigate();
@@ -150,94 +167,171 @@ const GetStarted = () => {
                 Course/Track
               </h1>
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Fullstack_Developemnt_with_javascript"
-                  {...register("track")}
-                  id=""
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="Fullstack_Developemnt_with_javascript"
+                      checked={
+                        selectedOption ===
+                        "Fullstack_development_with_Javascript"
+                      }
+                      id="javascript"
+                      onChange={() =>
+                        handleCheckBoxChange(
+                          "Fullstack_development_with_Javascript"
+                        )
+                      }
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   Fullstack Development with Javascript
                 </p>
               </span>
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Fullstack_Developemnt_with_Python"
-                  {...register("track")}
-                  id="python"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="Fullstack_Developemnt_with_Python"
+                      checked={
+                        selectedOption === "Fullstack_development_with_Python"
+                      }
+                      onChange={() =>
+                        handleCheckBoxChange(
+                          "Fullstack_development_with_Python"
+                        )
+                      }
+                      id="python"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   Fullstack Development with Python
                 </p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="UI/UX"
-                  {...register("track")}
-                  id="ui/ux"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="UI/Ux"
+                      checked={selectedOption === "UI/UX"}
+                      onChange={() => handleCheckBoxChange("UI/UX")}
+                      id="ui/ux"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   Product Management & UIUX Design
                 </p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Animation"
-                  {...register("track")}
-                  id="animation"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="Animation"
+                      checked={selectedOption === "Animation"}
+                      onChange={() => handleCheckBoxChange("Animation")}
+                      id="animation"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   Digital Arts and Animation
                 </p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Data_Engineering"
-                  {...register("track")}
-                  id="data_engineeering"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="Data_Engineering"
+                      checked={selectedOption === "Data_Engineering"}
+                      onChange={() => handleCheckBoxChange("Data_Engineering")}
+                      id="data_engineeering"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">Data Engineering</p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Ai_Prompt"
-                  {...register("track")}
-                  id="Ai_prompt"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="Ai_prompt"
+                      checked={selectedOption === "Ai_prompt"}
+                      onChange={() => handleCheckBoxChange("Ai_prompt")}
+                      id="Ai_prompt"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   AI and Prompting Engineering
                 </p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="Mobile_App"
-                  {...register("track")}
-                  id="mobile_app"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="mobile_app"
+                      checked={selectedOption === "mobile_app"}
+                      onChange={() => handleCheckBoxChange("mobile_app")}
+                      id="mobile_app"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">
                   Mobile App Development
                 </p>
               </span>{" "}
               <span className="flex m-6">
-                <input
-                  type="checkbox"
-                  value="others"
-                  {...register("track")}
-                  id="others"
-                  className="p-10 w-5 border-black"
+                <Controller
+                  name="selectedOption"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="checkbox"
+                      value="others"
+                      checked={selectedOption === "others"}
+                      onChange={() => handleCheckBoxChange("others")}
+                      id="others"
+                      className="p-10 w-5 border-black"
+                    />
+                  )}
                 />
                 <p className="ml-2 text-[18px] font-medium">Others</p>
               </span>
@@ -256,24 +350,38 @@ const GetStarted = () => {
 
               <div className="m-6">
                 <span className="flex mt-6">
-                  <input
-                    type="checkbox"
-                    value="morning"
+                  <Controller
                     name="preference"
-                    {...register("preference")}
-                    id="morning"
+                    control={control}
+                    render={({ field }) => (
+                      <input
+                        {...field}
+                        type="checkbox"
+                        value="morning"
+                        checked={preference === "morning"}
+                        onChange={() => handlePreferenceChange("morning")}
+                        id="morning"
+                      />
+                    )}
                   />
                   <p className="ml-2 text-base font-medium">
                     Morning (9:30am - 12:30pm)
                   </p>
                 </span>
                 <span className="flex mt-6 text-base font-medium">
-                  <input
-                    type="checkbox"
-                    value="afternoon"
+                  <Controller
                     name="preference"
-                    {...register("preference")}
-                    id="afternoon"
+                    control={control}
+                    render={({ field }) => (
+                      <input
+                        {...field}
+                        type="checkbox"
+                        value="afternoon"
+                        checked={preference === "afternoon"}
+                        onChange={() => handlePreferenceChange("afternoon")}
+                        id="afternoon"
+                      />
+                    )}
                   />
                   <p className="ml-2">Afternoon (1:30pm - 4:30pm)</p>
                 </span>

@@ -1,20 +1,15 @@
 import React from "react";
-import myimage from "../assets/myimage.png";
 import dd from "../assets/dd1.png";
-import abt from "../assets/abt.jpg";
 import wel from "../assets/wel.jpg";
-import abs from "../assets/abs.jpg";
-import man from "../assets/man.jpg";
-import man2 from "../assets/man2.jpg";
-import lady from "../assets/lady.jpg";
-import lady2 from "../assets/lady2.jpg";
+import blank from "../assets/blank.jpg";
+import lead from "../assets/ceo.jpg";
 
 const GetStarted = () => {
   return (
-    <main>
+    <main className="m-2">
       <section
         style={{
-          backgroundImage: `url(${abt})`,
+          backgroundImage: `url(${blank})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -64,28 +59,28 @@ const GetStarted = () => {
 
         <div className="md:flex  ">
           <div className=" flex flex-col justify-center items-center mt-4 mb-4 md:m-2 ">
-            <img src={man} alt="" className="rounded-[20px]" />
+            <img src={lead} alt="" className="rounded-[20px]" />
             <h1 className="text-[18px] font-md m-2 font-serif text-[#fd3c1d]">
               Lead
             </h1>
           </div>
 
           <div className="flex flex-col justify-center items-center mt-4 mb-4 md:m-2">
-            <img src={lady} alt="" className="rounded-[20px]" />
+            <img src={blank} alt="" className="rounded-[20px]" />
             <h1 className="text-[18px] font-md m-2 font-serif text-[#fd3c1d]">
               Director
             </h1>
           </div>
 
           <div className="flex flex-col justify-center items-center mt-4 mb-4 md:m-2">
-            <img src={man2} alt="" className="rounded-[20px]" />
+            <img src={blank} alt="" className="rounded-[20px]" />
             <h1 className="text-[18px] font-md m-2 font-serif text-[#fd3c1d]">
               Project Manager
             </h1>
           </div>
 
           <div className="flex flex-col justify-center items-center mt-4 mb-4 md:m-2">
-            <img src={lady2} alt="" className="rounded-[20px]" />
+            <img src={blank} alt="" className="rounded-[20px]" />
             <h1 className="text-[18px] font-md m-2 font-serif text-[#fd3c1d]">
               Data Scientist
             </h1>
